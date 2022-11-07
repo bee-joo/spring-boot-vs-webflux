@@ -1,0 +1,10 @@
+FROM mongo
+
+ENV HOST ${HOST}
+ENV PORT ${PORT}
+ENV USERNAME ${USERNAME}
+ENV PASSWORD ${PASSWORD}
+
+COPY . /mflix
+
+CMD ./mflix/import.sh ${HOST} ${PORT} ${USERNAME} ${PASSWORD}
